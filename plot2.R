@@ -10,5 +10,5 @@ data$Datetime <- as.POSIXct(datetime)
 
 # Create line chart
 plot(data$Global_active_power~data$Datetime, type="l", xlab="", ylab="Global Active Power (kilowatts)")
-png("plot2.png", width=480, height=480)
+dev.copy(png, file="plot2.png", height=480, width=480)
 dev.off()

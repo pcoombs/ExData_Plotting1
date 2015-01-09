@@ -17,10 +17,11 @@ with(data, {
   plot(data$Sub_metering_1~data$Datetime, type="l", ylab="Energy sub metering", xlab ="", main = "")
   lines(data$Sub_metering_2~data$Datetime, type="l", col = "red")
   lines(data$Sub_metering_3~data$Datetime, type="l", col = "blue")
-  legend("topright", col=c("black", "red", "blue"),legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+  legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, 
+         legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
   
   plot(data$Global_reactive_power~data$Datetime, type="l", xlab="datetime", ylab="Global_reactive_power")
 })
 
-png("plot4.png", width=480, height=480)
+dev.copy(png, file="plot4.png", height=480, width=480)
 dev.off()

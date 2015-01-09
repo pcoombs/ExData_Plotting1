@@ -6,5 +6,5 @@ data <- subset(testdata, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
 
 # Create Histogram chart
 hist(data$Global_active_power,xlab="Global Active Power (kilowatts)", ylab="Frequency", main = "Global Active Power", col = "red")
-png("plot1.png", width=480, height=480)
+dev.copy(png, file="plot1.png", height=480, width=480)
 dev.off()
